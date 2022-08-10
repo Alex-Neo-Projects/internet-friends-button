@@ -5,7 +5,6 @@ import {
   Animated,
   Pressable,
   ActivityIndicator,
-  StyleSheet, 
   TextInput
 } from 'react-native';
 
