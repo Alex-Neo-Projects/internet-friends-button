@@ -1,6 +1,6 @@
 {
   "name": "react-native-internet-friends-button",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A simple react native button that doesn't have the double click problem",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",

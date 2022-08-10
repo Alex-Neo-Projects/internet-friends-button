@@ -33,7 +33,7 @@ import { Button } from "internet-friends-button";
     </View>
 ```
 
-## Props
+## Button props
 ```js
   text: string, // Button text
   textColor?: string, 
@@ -42,6 +42,19 @@ import { Button } from "internet-friends-button";
   showShadow?: boolean, // Button shadow (try setting to false to see the difference)
   style?: any // Inline style
 ```
+
+## Input props
+```js
+  onChangeText:any,
+  placeholder:string,
+  onSubmitEditing:any,
+  secureTextEntry?: boolean,
+  autoCorrect?: boolean,
+  maxLength?:number,
+  height?: string | number,
+  width?: string | number
+```
+
 
 ## Contributing
 

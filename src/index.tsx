@@ -5,6 +5,8 @@ import {
   Animated,
   Pressable,
   ActivityIndicator,
+  StyleSheet, 
+  TextInput
 } from 'react-native';
 
 interface ButtonProps { 
@@ -17,6 +19,7 @@ interface ButtonProps {
   height?: string | number,
   style?: any
 }
+
 export function Button({ text, width, height, textColor = '#ffffff', buttonColor = '#1D99FF', onPressButton, showShadow = true, style = null } : ButtonProps) {
   const [isPressed, setIsPressed] = useState(false)
   const animatedScale = useRef(new Animated.Value(0)).current
@@ -89,4 +92,48 @@ export function Button({ text, width, height, textColor = '#ffffff', buttonColor
       </Pressable>
     </View>
   )
+}
+
+interface InputProps { 
+  onChangeText:any,
+  placeholder:string,
+  onSubmitEditing:any,
+  secureTextEntry?: boolean,
+  autoCorrect?: boolean,
+  maxLength?:number,
+  height?: string | number,
+  width?: string | number,
+}
+
+export function RoundedInput({
+  secureTextEntry,
+  autoCorrect,
+  onChangeText,
+  placeholder,
+  onSubmitEditing,
+  maxLength,
+  height, 
+  width
+}: InputProps) {
+  return (
+    <TextInput
+      autoCapitalize="none"
+      style={{
+        height: height ? height : 50,
+        width: width ? width : "100%",
+        backgroundColor: "rgba(230,230,230,10)",
+        borderRadius: 30,
+        paddingLeft: 20,
+        fontSize: 20,
+        paddingRight: 20,
+      }}
+      secureTextEntry={secureTextEntry ? secureTextEntry : false}
+      autoCorrect={autoCorrect ? autoCorrect : false}
+      onChangeText={onChangeText}
+      placeholderTextColor="#A1A1A1"
+      placeholder={placeholder}
+      onSubmitEditing={onSubmitEditing}
+      maxLength={maxLength}
+    />
+  );
 }
