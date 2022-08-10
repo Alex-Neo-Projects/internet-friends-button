@@ -1,29 +1,51 @@
-# react-native-internet-friends-button
-Simple button that doesn't have the double click problem
+# internet-friends-button
+A simple button for react native that doesn't have the double click problem
+
+![Simulator Screen Recording - iPhone 13 - 2022-07-28 at 14 20 22](https://user-images.githubusercontent.com/7016669/181639632-dbf2f443-426c-4477-b8b3-4f833369c45d.gif)
+
+Works for react native + expo projects!
+
 ## Installation
 
 ```sh
-npm install react-native-internet-friends-button
+npm install internet-friends-button
 ```
 
 ## Usage
 
 ```js
-import { multiply } from "react-native-internet-friends-button";
+import { Button } from "internet-friends-button";
 
 // ...
+  return (
+    <View style={styles.container}>
+      <Button 
+        text='Submit' 
+        onPressButton={() => {
+          return new Promise((resolve):void => {
+            setTimeout(() => {
+              Alert.alert('fuk')
+              resolve('yet'); 
+            }, 1000)
+          })
+        }}
+      />
+    </View>
+```
 
-const result = await multiply(3, 7);
+## Props
+```js
+  text: string, // Button text
+  textColor?: string, 
+  buttonColor?: string,
+  onPressButton: Function, // Pass in a function to run when the button is clicked
+  showShadow?: boolean, // Button shadow (try setting to false to see the difference)
+  style?: any // Inline style
 ```
 
 ## Contributing
 
-See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
+To run example project: 
 
-## License
-
-MIT
-
----
-
-Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)
+```yarn```
+```yarn run example ios```

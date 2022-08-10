@@ -1,31 +1,33 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-internet-friends-button';
+import { StyleSheet, Alert, SafeAreaView } from 'react-native';
+import { Button } from 'react-native-internet-friends-button';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
-
-  return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
-    </View>
-  );
+    return (
+      <SafeAreaView style={styles.container}>
+        <Button 
+          style={{flex: 1, padding: 20, justifyContent: 'flex-end'}}
+          text='Submit' 
+          showShadow={false}
+          width={'100%'}
+          onPressButton={() => {
+            return new Promise((resolve):void => {
+              setTimeout(() => {
+                Alert.alert('it works!')
+                resolve('yet'); 
+              }, 1000)
+            })
+          }}
+        />
+      </SafeAreaView>
+    );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
+    // alignItems: 'center',
+    // justifyContent: 'center',
   },
 });
