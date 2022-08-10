@@ -8,7 +8,7 @@ Works for react native + expo projects!
 ## Installation
 
 ```sh
-npm install internet-friends-button
+npm install react-native-internet-friends-button
 ```
 
 ## Usage
